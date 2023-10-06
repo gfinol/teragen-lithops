@@ -34,4 +34,5 @@ The script takes the following parameters:
 - **-k**: Key name prefix for the files created.
 - **-p**: Number of partitions files to create. Lithops will create a worker for each partition.
 - **-c**: Lithops config file path
+- **--ascii**: Use only printable characters in the dataset. Default: False
 - **-h**: Show help message.
