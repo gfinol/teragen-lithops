@@ -1,0 +1,2 @@
+lithops==3.0
+numpy
