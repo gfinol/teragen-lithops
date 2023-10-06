@@ -51,6 +51,8 @@ def parse_args():
     ap.add_argument("-p", "--partitions", type=int, default=16,
                     help="Number of partitions to generate")
     ap.add_argument("-c", "--config-file", type=str)
+    ap.add_argument("-l", "--localhost", action="store_true", default=False,
+                    help="Run locally using processes")
 
     return ap.parse_args()
 
@@ -90,7 +92,8 @@ def main():
 
     print_config(size, is_ascii, num_partitions, records_per_partition, num_records, key_name, bucket_name)
 
-    fexec = FunctionExecutor(config_file=args.config_file)
+    fexec = FunctionExecutor(backend='localhost', storage='localhost') if args.localhost \
+        else FunctionExecutor(config_file=args.config_file)
     arg_iter = [(i, records_per_partition, is_ascii, bucket_name, f"{key_name}-{i:05d}") for i in range(num_partitions)]
     fexec.map(write_dataset, arg_iter)
     fexec.wait()

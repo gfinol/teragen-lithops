@@ -35,4 +35,5 @@ The script takes the following parameters:
 - **-p**: Number of partitions files to create. Lithops will create a worker for each partition.
 - **-c**: Lithops config file path
 - **--ascii**: Use only printable characters in the dataset. Default: False
+- **--localhost** Execute the function locally using processes. Default: False
 - **-h**: Show help message.
