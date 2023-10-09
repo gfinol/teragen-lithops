@@ -37,3 +37,5 @@ The script takes the following parameters:
 - **--ascii**: Use only printable characters in the dataset. Default: False
 - **--localhost** Execute the function locally using processes. Default: False
 - **-h**: Show help message.
+- **--unique-file**: Create a unique file instead of multiple files. Uses S3 multipart upload. 
+Requires S3 as the configured Lithops storage backend. Default: False
