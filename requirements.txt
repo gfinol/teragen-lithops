@@ -1,2 +1,2 @@
-lithops==3.0
+lithops[aws]==3.0
 numpy
